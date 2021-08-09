@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
 import ForecastItem from './../ForecastItem'
+import { validValues } from './../IconState'
 
 const renderForecastItem = (forecast) => {
   const { weekDay, hour, state, temperature } = forecast
   return (
-    <Grid item key={`${weekDay}${hour}`}>
+    <Grid data-testid="forecast-item-container" item key={`${weekDay}${hour}`}>
       <ForecastItem
         hour={hour}
         weekDay={weekDay}
@@ -19,8 +20,8 @@ const renderForecastItem = (forecast) => {
 
 const Forecast = ({ forecastItemList }) => {
   return (
-    <Grid conrtainer justify="center" alignItems="center">
-      {forecastItemList.map((forecast) => renderForecastItem(Forecast))}
+    <Grid container justify="center" alignItems="center">
+      {forecastItemList.map((forecast) => renderForecastItem(forecast))}
     </Grid>
   )
 }
