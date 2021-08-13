@@ -23,7 +23,7 @@ const App = () => {
           <Route>
             Not Found
             <div>
-              <Link to="/main">volver a main para nevegar</Link>
+              <Link to="/main">volver a main</Link>
             </div>
           </Route>
         </Switch>
