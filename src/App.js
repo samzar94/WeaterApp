@@ -1,34 +1,34 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import CityPage from './pages/CityPage'
+import MainPage from './pages/MainPage'
+import NotFoundPage from './pages/NotFoundPage'
+import WelcomePage from './pages/WelcomePage'
+import Grid from '@material-ui/core/Grid'
 
 const App = () => {
   return (
-    <div>
-      <h1>this is app</h1>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            Welcome
-            <div>
-              <Link to="/main">ir a main</Link>
-            </div>
-          </Route>
-          <Route path="/main">Main</Route>
-          <Route path="/city">
-            City
-            <div>
-              <Link to="/main">volver a main</Link>
-            </div>
-          </Route>
-          <Route>
-            Not Found
-            <div>
-              <Link to="/main">volver a main</Link>
-            </div>
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <Grid container justify="center" direction="row">
+      <Grid item sm={10} xs={10}>
+        <h1>this is app</h1>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <WelcomePage />
+            </Route>
+            <Route path="/main">
+              <MainPage />
+            </Route>
+            <Route path="/city">
+              <CityPage />
+            </Route>
+            <Route>
+              <NotFoundPage />
+            </Route>
+          </Switch>
+        </Router>
+      </Grid>
+    </Grid>
   )
 }
 
